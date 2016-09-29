@@ -3,6 +3,10 @@ var ctx1,ctx2;
 var canW,canH;
 var ane,fruit,mom,baby;
 var mx,my;
+
+var babyTail=[];
+var babyEye=[];
+var babyBody=[];
 var bgPic=new Image();
 //lastTime上一帧执行的时间
 //deltaTime两帧间隔的时间
@@ -43,6 +47,19 @@ function init() {
 
 	mx=canW*0.5;
 	my=canH*0.5;
+
+	for(var i=0;i<8;i++){
+		babyTail[i]=new Image();
+		babyTail[i].src="./src/bigTail"+i+".png";
+	}
+	for(var i=0;i<2;i++){
+		babyEye[i]=new Image();
+		babyEye[i].src="./src/babyEye"+i+".png";
+	}
+	for(var i=0;i<20;i++){
+		babyBody[i]=new Image();
+		babyBody[i].src="./src/babyFade"+i+".png";
+	}
 }
 function gameloop() {
 	// body...
@@ -60,7 +77,8 @@ function gameloop() {
 //清空画板
 	ctx1.clearRect(0,0,canW,canH);
 	mom.draw();
-	momFruitCollision();
 	baby.draw();
+	momFruitCollision();
+	momBabyCollision();
 }
 

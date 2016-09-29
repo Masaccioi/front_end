@@ -12,3 +12,12 @@ function momFruitCollision(){
         }
     }
 }
+
+//大鱼小鱼距离
+function momBabyCollision(){
+    var l=calLength2(mom.x,mom.y,baby.x,baby.y);
+    if(l<900){
+        //baby复活
+        baby.babyBodyCount=0;
+    }
+}
