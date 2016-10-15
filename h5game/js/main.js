@@ -7,6 +7,8 @@ var mx,my;
 var babyTail=[];
 var babyEye=[];
 var babyBody=[];
+var momTail=[];
+var momEye=[];
 var bgPic=new Image();
 //lastTime上一帧执行的时间
 //deltaTime两帧间隔的时间
@@ -59,6 +61,15 @@ function init() {
 	for(var i=0;i<20;i++){
 		babyBody[i]=new Image();
 		babyBody[i].src="./src/babyFade"+i+".png";
+	}
+
+	for(var i=0;i<8;i++){
+		momTail[i]=new Image();
+		momTail[i].src="./src/bigTail"+i+".png";
+	}
+	for(var i=0;i<2;i++){
+		momEye[i]=new Image();
+		momEye[i].src="./src/bigEye"+i+".png";
 	}
 }
 function gameloop() {
